@@ -1,5 +1,5 @@
-Build
+*.swp
 *.bak
-Module-Build-Smolder-*
-_build/
-blib/
+_build
+Build
+blib
