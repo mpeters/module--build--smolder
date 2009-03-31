@@ -5,7 +5,7 @@ use base 'Module::Build::TAPArchive';
 use WWW::Mechanize;
 use Carp qw(croak);
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 __PACKAGE__->add_property('server');
 __PACKAGE__->add_property('username');
 __PACKAGE__->add_property('password');
@@ -19,10 +19,6 @@ __PACKAGE__->add_property('use_existing_archive');
 =head1 NAME
 
 Module::Build::Smolder - Extra build targets for sending smoke tests to a Smolder server
-
-=head1 VERSION
-
-Version 0.01
 
 =head1 SYNOPSIS
 
@@ -114,6 +110,8 @@ sub ACTION_smolder {
     # if we have --username then we need --password
     croak "You need to specify --password if you are giving a --username"
         if $p->{username} && !$p->{password};
+    croak "You need to specify --username if you are giving a --password"
+        if $p->{password} && !$p->{username};
 
     # make sure our archive_file is there and we can use it
     my $file = $p->{archive_file};
