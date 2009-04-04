@@ -1,6 +1,6 @@
 ---
 name: Module-Build-Smolder
-version: 0.01
+version: 0.02
 author:
   - 'Michael Peters <mpeters@plusthree.com>'
 abstract: Extra build targets for sending smoke tests to a Smolder server
@@ -19,7 +19,7 @@ build_requires:
 provides:
   Module::Build::Smolder:
     file: lib/Module/Build/Smolder.pm
-    version: 0.01
+    version: 0.02
 generated_by: Module::Build version 0.32
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.2.html
